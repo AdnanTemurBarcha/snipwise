@@ -18,39 +18,9 @@ Upload order for screenshots: 1 → 5 (the first one is the hero shown in search
 
 Capture any page and edit it with layers, annotations, brushes, masks and filters. Export PNG or PDF. 100% local, no uploads.
 
-## Detailed description (draft)
+## Detailed description
 
-**Snipwise Studio captures any web page — then lets you edit it like a real image editor.**
-
-Take a screenshot of the visible area, the whole page, or a region you drag out. It opens in Studio, a full layered editor that runs entirely in your browser. Nothing is uploaded, there is no account, and there are no ads or tracking.
-
-**Annotate**
-• Text, callouts, rectangles, ellipses, lines, arrows, pen and highlighter
-• Numbered step markers and a searchable emoji picker with the full Unicode set
-• Every annotation is an editable layer — move, resize, rotate or restyle it any time
-
-**Protect private details**
-• Blur, pixelate or solid-cover any area with non-destructive privacy layers
-• Move or delete a layer and the original is back
-
-**Edit like a pro**
-• Brush, eraser, paint bucket, gradient, eyedropper and clone stamp
-• Rectangle, ellipse, lasso and magic-wand selections
-• Layers with 16 blend modes, drop shadows, outlines and adjustment layers
-• Layer masks, levels, brightness/contrast/hue/saturation, and filters like blur, sharpen and noise
-• Undo and redo for up to 300 steps, each one labelled
-
-**Start from anything**
-• Open a blank canvas from presets (social, screen, print) with a transparent or colored background
-• Drag, drop or paste images, and combine several on pages
-
-**Export**
-• Full-resolution PNG with transparency, or copy straight to the clipboard
-• Multi-page PDF with a live preview, cover page and page-fit options
-
-**Private by design** — everything runs locally on your device, and the extension asks for no host permissions.
-
-Built-in documentation: click **Docs** in the editor (or press F1).
+Plain text (the store does not render Markdown): copy the contents of [`description.txt`](description.txt) into the **Detailed description** field.
 
 ## Suggested listing fields
 
@@ -58,7 +28,7 @@ Built-in documentation: click **Docs** in the editor (or press F1).
 - **Language:** English
 - **Privacy policy URL:** https://github.com/AdnanTemurBarcha/snipwise/blob/main/privacy.md
 - **Single purpose** (dashboard field): "Capture screenshots of web pages and edit and export them as images or PDFs."
-- **Permission justifications:** see the table in `README.md` (`activeTab`/`scripting`: capture the page you invoked it on and show the crop overlay; `tabs`: take the screenshot and open the editor, PDF and docs tabs; `storage`/`unlimitedStorage`: hand large captures to the editor and keep theme, presets and recent emoji).
+- **Permission justifications:** see the table in `README.md` (`activeTab`/`scripting`: capture the page you invoked it on and show the crop overlay; `tabs`: take the screenshot and open the editor, PDF and docs tabs; `storage`: keep theme and saved presets). The exact text to paste is in `privacy-tab.txt`..
 
 ## Promo video (optional)
 

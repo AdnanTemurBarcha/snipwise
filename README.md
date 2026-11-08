@@ -103,7 +103,7 @@ scripts/                       # e2e scripts
 |------------|-----|
 | `activeTab`, `scripting` | Capture the page you invoked Snipwise on and run the crop overlay |
 | `tabs` | Open Studio / PDF / docs tabs and take the screenshot |
-| `storage`, `unlimitedStorage` | Hand large captures to Studio, and keep your theme, presets and recent emoji |
+| `storage` | Keep your theme and saved adjustment presets (captures are passed to Studio in memory and are never stored) |
 
 There are **no host permissions** and no remote code.
 

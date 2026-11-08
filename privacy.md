@@ -33,7 +33,7 @@ Snipwise Studio makes **zero network requests of its own**. It does not contact 
 
 Some data stays in your browser's local extension storage, only so the extension works the way you expect:
 
-- **A pending capture** — held briefly to hand a screenshot from the page to the editor tab, then discarded.
+- **A pending capture** — held briefly in memory to hand a screenshot from the page to the editor tab, then discarded. Screenshots are never written to storage.
 - **Preferences** — your light/dark theme, and your last "New canvas" size and background.
 - **Your saved adjustment presets and recently used emoji.**
 
@@ -47,7 +47,7 @@ This data never leaves your device. Removing the extension deletes it.
 |------------|---------|
 | `activeTab`, `scripting` | Capture the page you invoked Snipwise Studio on, and show the crop-region overlay on it |
 | `tabs` | Take the screenshot, and open the editor, PDF and documentation tabs |
-| `storage`, `unlimitedStorage` | Hand large captures to the editor and keep the preferences listed above |
+| `storage` | Keep the preferences listed above (theme and saved adjustment presets) |
 
 Snipwise Studio requests **no host permissions** and cannot read pages you have not explicitly invoked it on.
 

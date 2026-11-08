@@ -1,0 +1,30 @@
+=== SINGLE PURPOSE ===
+Capture screenshots of web pages and edit them — annotate, redact and retouch — before saving them as PNG or PDF.
+
+=== activeTab justification ===
+Required to capture the page the user is looking at. When the user clicks the Snipwise Studio icon and chooses a capture mode, the extension calls chrome.tabs.captureVisibleTab to take the screenshot of that tab, and uses the temporary access to that tab to check that it is a regular web page and to name the capture. Without this permission the extension cannot take any screenshot.
+
+=== scripting justification ===
+Required to run code in the tab the user chose to capture. (1) In Crop Region mode it injects content.js, which draws the crop-selection overlay. (2) In Full Page mode it reads the page's size, scrolls the page step by step so each section can be captured, restores the original scroll position, and stitches the screenshots into one image. It only runs after the user picks a capture mode; it never runs in the background on pages the user has not chosen.
+
+=== tabs justification ===
+Used to open the editor, the PDF page and the documentation in new tabs, to find the active tab when the popup opens, and to message the crop overlay in that tab. The extension reads only the active tab's address and title, at the moment the user starts a capture, to check that the page can be captured and to name the capture. It does not read, store or transmit browsing history.
+
+=== storage justification ===
+Used to save two small things locally on the user's device: the light/dark theme preference and the adjustment presets the user chooses to save. No screenshots and no browsing data are stored, and nothing is sent to any server.
+
+=== Remote code ===
+No. All code, including the jsPDF library, is bundled inside the extension package.
+
+=== Data usage (Privacy practices tab) ===
+Leave every "data collected" box unchecked: the extension does not collect or transmit user data.
+Tick all three certifications:
+- I do not sell or transfer user data to third parties, outside of the approved use cases
+- I do not use or transfer user data for purposes that are unrelated to my item's single purpose
+- I do not use or transfer user data to determine creditworthiness or for lending purposes
+
+=== Privacy policy URL ===
+https://github.com/AdnanTemurBarcha/snipwise/blob/main/privacy.md
+
+=== Notes ===
+- unlimitedStorage was removed in v3.0.0: screenshots are handed to the editor in memory and never stored, so the permission was not needed. Do not add it back to the manifest unless captures start being saved to disk.

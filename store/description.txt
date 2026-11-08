@@ -1,0 +1,60 @@
+Snipwise Studio captures any web page — then lets you edit it like a real image editor. It's free, open source, and lives entirely in your browser. No accounts. No cloud uploads. Everything stays on your device.
+
+5 WAYS TO START
+- Visible Area — capture exactly what's on screen right now
+- Full Page — scroll and stitch the entire page automatically
+- Crop Region — drag to select any area of the page
+- Save as PDF — one-click capture straight to a PDF file
+- Blank Canvas — start from scratch: pick a preset (social, screen, print) or any custom size, with a transparent or colored background
+
+A FULL LAYERED EDITOR — NOT JUST A MARKUP TOOL
+Every capture opens in Studio, a complete editor:
+- Layers — every image, annotation and brush stroke is its own layer: move, resize, rotate, flip, reorder, lock, hide, duplicate, rename
+- Pages — keep several pages in one project, each with its own size and layers
+- Align, distribute and snap with guide lines; multi-select with a marquee
+- Add images by file picker, drag-and-drop or paste — they keep their real size, and transparent margins (like a window screenshot's shadow) are trimmed so the transform box hugs what you see
+- Non-destructive crop, artboard resize, zoom and pan
+- Undo and redo for up to 300 steps, each one labelled
+
+ANNOTATE
+- Text and Callout bubbles — real objects: double-click to edit, any font size, weight and color
+- Rectangle, Ellipse, Line and Arrow — outline, fill, corner radius, arrowheads
+- Pen and Highlighter — freehand strokes
+- Step markers — auto-numbered circles for tutorials
+- Emoji stamps — search the full Unicode emoji set, with recents and quick picks
+
+HIDE PRIVATE DETAILS
+- Blur, Pixelate or Solid cover any area. They are non-destructive layers: move or delete one and the original is back
+
+PAINT AND RETOUCH
+- Brush (size, hardness, opacity, pen pressure), Eraser, Paint bucket, Gradient, Eyedropper and Clone stamp
+- Selections: rectangle, ellipse, lasso and magic wand — add, subtract, feather, grow or shrink, invert, then fill, clear, or copy to a new layer
+- Paint lands on its own layer, so your screenshot stays untouched
+
+EFFECTS, ADJUSTMENTS AND MASKS
+- Drop shadow and outline on any layer
+- Brightness, contrast, saturation, hue, sepia, grayscale, invert, blur and Levels — all non-destructive
+- Adjustment layers that re-color everything beneath them, plus presets you can save yourself
+- 16 blend modes and per-layer opacity
+- Layer masks: hide parts of a layer without erasing them; paint masks with the brush or create one from a selection
+- Filters: Gaussian blur, sharpen, noise, pixelate, posterize, black & white, sepia (limited to your selection if you have one)
+
+EXPORT
+- Download PNG — full resolution, with transparency preserved
+- Copy Image — paste straight into Slack, email, Figma, anywhere
+- Export PDF — a dialog with a live preview: page size (A4/Letter/Legal), orientation, margins, fit or split tall pages, and an optional cover page with your own title and accent color. Combines every page into one document
+
+BUILT-IN DOCUMENTATION
+Click Docs in the editor (or press F1) for a searchable guide to every tool and shortcut. Light and dark themes included.
+
+PRIVACY
+Snipwise Studio is 100% local. Screenshots and edits never leave your device. No analytics, no tracking, no third-party services of any kind. It makes no network requests of its own, and it asks for no host permissions.
+
+Permissions used:
+- activeTab — to capture the page you invoked it on
+- scripting — to show the crop overlay and run the full-page scroll capture
+- tabs — to take the screenshot and open the editor, PDF and docs tabs
+- storage — to keep your theme and saved adjustment presets (screenshots are never stored)
+
+OPEN SOURCE
+Snipwise Studio is MIT-licensed, written in TypeScript and built with Vite, with a unit and end-to-end test suite. Read the code, report issues or contribute on GitHub: https://github.com/AdnanTemurBarcha/snipwise

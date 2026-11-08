@@ -1,45 +1,76 @@
-# Snipwise — Privacy Policy
+# Snipwise Studio — Privacy Policy
 
-**Last updated:** March 2026  
-**Extension:** Snipwise — Screenshot & PDF  
+**Extension:** Snipwise Studio — Screenshot, Edit & PDF
 **Developer:** Adnan Temur Barcha
 
 ---
 
 ## Summary
 
-Snipwise collects no personal data. Nothing you capture, annotate, 
-or export ever leaves your device. There are no servers, no accounts, 
-and no analytics.
+Snipwise Studio collects no personal data. Nothing you capture, edit or export ever leaves your device. There are no servers, no accounts and no analytics.
 
 ---
 
-## What Snipwise Does
+## What Snipwise Studio does
 
-Snipwise is a browser extension that captures screenshots of web pages, 
-provides annotation tools, and exports images as PNG or PDF files.
-
-All of this happens entirely on your device, inside your browser.
+It captures screenshots of web pages you choose, lets you edit them in a built-in image editor, and exports PNG images or PDF files. All of this happens on your device, inside your browser.
 
 ---
 
-## Data We Collect
+## Data we collect
 
-**None.**
-
-Snipwise does not collect, store, transmit, or share any personal 
-information, browsing history, screenshots, or usage data.
+**None.** Snipwise Studio does not collect, store on a server, transmit or share any personal information, browsing history, screenshots or usage data.
 
 ---
 
-## Network Requests
+## Network requests
 
-Snipwise makes zero network requests of its own.
+Snipwise Studio makes **zero network requests of its own**. It does not contact any server, API or third-party service, does not send analytics, and does not load remote scripts, fonts or other resources at runtime. All code and assets ship inside the extension package.
 
-The extension does not contact any server, API, or third-party service. 
-It does not phone home. It does not send analytics. It does not load 
-any remote scripts or resources at runtime.
+---
 
-The only file loaded from outside the extension package is the Google 
-Fonts stylesheet used for typography in the editor interface — this is 
-a standard browser request with no user identifiers atta
+## Data stored on your device
+
+Some data stays in your browser's local extension storage, only so the extension works the way you expect:
+
+- **A pending capture** — held briefly to hand a screenshot from the page to the editor tab, then discarded.
+- **Preferences** — your light/dark theme, and your last "New canvas" size and background.
+- **Your saved adjustment presets and recently used emoji.**
+
+This data never leaves your device. Removing the extension deletes it.
+
+---
+
+## Permissions and why they are needed
+
+| Permission | Purpose |
+|------------|---------|
+| `activeTab`, `scripting` | Capture the page you invoked Snipwise Studio on, and show the crop-region overlay on it |
+| `tabs` | Take the screenshot, and open the editor, PDF and documentation tabs |
+| `storage`, `unlimitedStorage` | Hand large captures to the editor and keep the preferences listed above |
+
+Snipwise Studio requests **no host permissions** and cannot read pages you have not explicitly invoked it on.
+
+---
+
+## Third parties
+
+None. The bundled [jsPDF](https://github.com/parallax/jsPDF) library runs locally to build PDF files.
+
+---
+
+## Children
+
+Snipwise Studio does not collect data from anyone, including children.
+
+---
+
+## Changes
+
+If this policy ever changes, the updated version will be published in this repository with the extension update.
+
+---
+
+## Contact
+
+Questions: open an issue at <https://github.com/AdnanTemurBarcha/snipwise>.

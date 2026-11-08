@@ -42,8 +42,9 @@ export default defineConfig(({ mode }) => {
       rollupOptions: {
         input: {
           popup: resolve(root, 'popup.html'),
-          editor: resolve(root, 'editor.html'),
+          studio: resolve(root, 'studio.html'),
           pdf: resolve(root, 'pdf.html'),
+          docs: resolve(root, 'docs.html'),
           background: resolve(root, 'background.js'),
         },
         output: {

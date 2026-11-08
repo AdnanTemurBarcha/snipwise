@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Snipwise Studio</title>
+  <link rel="stylesheet" href="./studio/studio.css" />
+</head>
+<body>
+  <header class="topbar" id="topbar">
+    <div class="brand">Snip<span>wise</span> <em>Studio</em></div>
+    <div class="sep"></div>
+    <button class="btn ghost" id="btnNew" title="New blank canvas"></button>
+    <button class="btn ghost" id="btnAddImage"></button>
+    <div class="sep"></div>
+    <button class="icon-btn" id="btnUndo" title="Undo (Ctrl+Z)"></button>
+    <button class="icon-btn" id="btnRedo" title="Redo (Ctrl+Shift+Z)"></button>
+    <div class="grow"></div>
+    <button class="btn ghost" id="btnDocs" title="Open the documentation (F1)"></button>
+    <button class="btn ghost" id="btnCopy"></button>
+    <button class="btn ghost" id="btnPdf"></button>
+    <button class="btn primary" id="btnDownload"></button>
+    <button class="icon-btn" id="btnTheme" title="Toggle light / dark"></button>
+  </header>
+
+  <div class="workspace">
+    <nav class="toolrail" id="toolrail"></nav>
+
+    <main class="stage-wrap" id="stageWrap">
+      <div class="stage-host" id="stageHost"></div>
+      <div class="empty-state" id="emptyState">
+        <div class="empty-title">This page is empty</div>
+        <div class="empty-desc">Drag an image here, paste with <strong>Ctrl+V</strong>, add an image, or start from a blank canvas.</div>
+        <button class="btn primary" id="btnAddImageEmpty"></button>
+        <button class="btn ghost" id="btnNewEmpty"></button>
+      </div>
+      <div class="dropzone" id="dropzone">Drop image to add</div>
+      <div class="crop-bar" id="cropBar"></div>
+    </main>
+
+    <aside class="sidebar">
+      <div class="inspector" id="inspector"></div>
+      <section class="panel">
+        <div class="panel-head"><span>Pages</span><span class="count" id="pagesCount">1</span></div>
+        <div id="pagesPanel"></div>
+      </section>
+      <section class="panel grow">
+        <div class="panel-head"><span>Layers</span><span class="count" id="layersCount">0</span></div>
+        <div id="layersPanel" class="layers-host"></div>
+      </section>
+    </aside>
+  </div>
+
+  <footer class="statusbar">
+    <span id="statusText">Ready</span>
+    <span class="tool-name" id="toolName" title="Active tool"></span>
+    <div class="grow"></div>
+    <div class="zoom">
+      <button class="icon-btn" id="zoomOut" title="Zoom out (Ctrl+−)">−</button>
+      <button class="zoom-level" id="zoomLevel" title="Reset to 100% (Ctrl+1)">100%</button>
+      <button class="icon-btn" id="zoomIn" title="Zoom in (Ctrl++)">+</button>
+      <button class="icon-btn" id="zoomFit" title="Fit to window (Ctrl+0)">Fit</button>
+    </div>
+    <span id="sizeText" class="size-text"></span>
+  </footer>
+
+  <div id="pdfDialogOverlay" class="modal-overlay"></div>
+
+  <script src="/jspdf.min.js"></script>
+  <script type="module" src="./studio/main.ts"></script>
+</body>
+</html>

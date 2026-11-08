@@ -1,21 +1,25 @@
 {
-  "name": "snipwise",
-  "version": "2.0.0",
+  "name": "snipwise-studio",
+  "version": "3.0.0",
   "private": true,
   "type": "module",
-  "description": "Snipwise - Screenshot & PDF Chrome extension with a full layered editor",
+  "description": "Snipwise Studio - capture any page, then edit it like a pro. A Chrome extension.",
   "scripts": {
     "dev": "vite build --watch",
     "build": "vite build && vite build --mode content",
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
-    "lint": "eslint src"
+    "lint": "eslint src",
+    "e2e": "npm run build && node scripts/e2e-studio.mjs",
+    "e2e:crop": "npm run build && node scripts/e2e-crop.mjs",
+    "package": "npm run build && cd dist && zip -qr ../snipwise-studio.zip . && echo Created snipwise-studio.zip"
   },
   "license": "MIT",
   "devDependencies": {
     "@types/chrome": "^0.3.7",
     "@types/node": "^26.6.6",
     "eslint": "^10.14.0",
+    "puppeteer-core": "^25.16.0",
     "typescript": "^7.0.2",
     "vite": "^8.3.6",
     "vitest": "^5.1.0"

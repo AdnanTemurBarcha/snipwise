@@ -1,298 +1,128 @@
-# ✂ Snipwise — Screenshot, Multi-Page Editor & PDF
+# ✂ Snipwise Studio — Capture, Edit & Export
 
-> Capture. Combine. Annotate. Export. Right in your browser.
+> Capture any page, then edit it like a pro. Right in your browser.
 
-A free, open-source Chrome extension for capturing screenshots, combining them into multi-image, multi-page compositions, annotating them, and exporting as PNG or a fully customizable PDF — 100% locally, with no uploads, no accounts, and no tracking.
+A free, open-source Chrome extension that captures screenshots and gives you a full layered image editor to finish them — annotate, paint, retouch, add effects, then export a PNG or a polished PDF. **100% local: no uploads, no accounts, no tracking.**
 
 [![Chrome Web Store](https://img.shields.io/badge/Chrome_Web_Store-Install-4285F4?style=flat-square&logo=googlechrome&logoColor=white)](https://chromewebstore.google.com/detail/snipwise)
 [![License](https://img.shields.io/badge/license-MIT-7c3aed?style=flat-square)](LICENSE)
 [![Manifest](https://img.shields.io/badge/manifest-v3-a78bfa?style=flat-square)]()
-[![Version](https://img.shields.io/badge/version-2.0.0-c4b5fd?style=flat-square)]()
+[![Version](https://img.shields.io/badge/version-3.0.0-c4b5fd?style=flat-square)]()
 
 ---
 
 ## Features
 
-### 5 Ways to Start
+### Five ways to start
 
 | Mode | Description |
 |------|-------------|
 | 📷 **Visible Area** | Captures exactly what's on screen right now |
 | 📄 **Full Page** | Scrolls and stitches the entire page automatically |
 | ✂ **Crop Region** | Drag to select any area of the page |
-| 🖨 **Save as PDF** | Quick one-click capture straight to a PDF file |
-| 🗂 **Blank Workspace** | Open the editor with nothing loaded — build a composition entirely from local images, drag-drop, or paste |
+| 🖨 **Save as PDF** | One-click capture straight to a PDF file |
+| 🗂 **Blank Canvas** | Open Studio empty — start from your own images, or a blank canvas from presets (social, screen, print) with a transparent or colored background |
 
-### A Real Multi-Image, Multi-Page Editor
+### A real editor, not a markup tool
 
-Capture opens a full editor in a new tab, built around **pages** and **layers** — not a single flat screenshot:
+- **Layers everywhere** — every annotation, image and brush stroke is an editable layer: move, resize, rotate, flip, reorder, lock, hide, duplicate, rename. Align, distribute and snap with guides.
+- **Annotate** — text, callouts, rectangles, ellipses, lines, arrows, pen, highlighter, numbered step markers and a full searchable **emoji** picker (the whole Unicode set).
+- **Privacy tools** — non-destructive **blur, pixelate and solid redact** layers that re-render what's underneath; move or delete them and the original is back.
+- **Paint & retouch** — brush (size, hardness, opacity, pen pressure), eraser, paint bucket, gradient, eyedropper and clone stamp.
+- **Selections** — rectangle, ellipse, lasso and magic wand with add/subtract, feather, grow/shrink, invert; fill, clear, copy or cut to a new layer.
+- **Non-destructive effects** — drop shadow, outline, brightness/contrast/saturation/hue/sepia/blur, levels, 16 blend modes, **adjustment layers**, saveable presets.
+- **Layer masks** — hide parts of any layer without erasing them; paint masks with the brush tools, or create them from a selection.
+- **Filters** — Gaussian blur, sharpen, noise, pixelate, posterize, black & white, sepia, invert (selection-aware).
+- **Pages & canvas** — multiple pages, non-destructive crop, artboard resize, smart placement that trims transparent margins and keeps images at their real size.
+- **Export** — full-resolution PNG (with transparency), copy to clipboard, and a customizable multi-page **PDF** with live preview, cover page and page-fit options.
+- **Unlimited undo/redo** (300 steps), dark and light themes, built-in **documentation** (the Docs button, or `F1`).
 
-- **Pages** — a workspace can hold multiple pages, each its own canvas. Add pages, reorder them, delete them; each keeps its own layers, annotations, and undo history.
-- **Image layers** — every image on a page (the original capture, or anything you add afterward) is a movable, resizable, reorderable, opacity-adjustable layer, not baked-in pixels. Select with the **Move tool (V)**, drag to reposition, drag a corner to resize.
-- **Add images** three ways: file picker, drag-and-drop onto the canvas, or paste (**Ctrl+V**) — including screenshots copied from anywhere else.
-- **Ratio-locked resize** — hold **Shift** while resizing to preserve aspect ratio, or toggle the padlock button to make it the default.
-- **Zoom controls** — `−` / `100%` / `+` / **Fit**, in the status bar. Auto-fits when a page's content actually changes size; stays put when you switch pages.
-
-### Annotation Tools
-
-- **✏ Pen** — freehand drawing
-- **↗ Arrow** — clean filled arrowhead, shaft stops before tip
-- **─ Line** — straight line
-- **▭ Rectangle** / **○ Circle** — shapes fitted to bounding box
-- **T Text** — click to place, type, Enter to commit. **A real object**: select it with the Move tool to reposition/resize (font scales with the box), or double-click to edit the text in place.
-- **💬 Callout Bubble** — typed text inside a speech bubble with tail. Same object behavior as Text — movable, resizable, double-click to edit.
-- **① Step Markers** — auto-numbered circles for tutorials, resets on clear
-- **🖍 Highlight** — translucent marker strokes
-- **⬛ Blur / Redact** — pixelate sensitive information
-- **✂ Crop Canvas** — trim the whole composition after capture
-- **😀 Emoji Stamp** — pick from 30 emojis and stamp anywhere
-
-Colors aren't limited to a preset palette — pick any color via the swatches, the native color picker, or by typing a hex code directly. Custom stroke sizes. **50-level undo**, unified across annotations, layer moves, and page structure. Full keyboard shortcuts.
-
-### Export Options
-
-- **⬇ Download PNG** — full resolution, lossless
-- **📋 Copy Image** — paste directly into Slack, email, Figma, WhatsApp
-- **🖨 Export PDF** — opens a settings dialog with a **live preview**: page size (A4/Letter/Legal), orientation, margins, and a fully customizable cover page (your own title, accent color, thumbnail toggle) or none at all. Each workspace page maps to its own PDF page by default — "Split tall pages" is available as an option for a genuinely tall full-page capture. Combines every page in the workspace into one document.
-
-### Interface
-
-- Light theme by default (plain, high-contrast, "mini Photoshop" styling), dark theme available via the toggle — both use real neutral tokens, not a tinted overlay.
-- Hand-drawn SVG icon set throughout — no emoji-as-UI-chrome (the Emoji Stamp tool's own picker is the one legitimate exception, since that's content you're placing, not app chrome).
-- Sidebar: a **Pages** panel (vertical cards with large thumbnails) stacked above a **Layers** panel (two-tier rows: thumbnail/name/visibility on top, opacity/reorder/delete below) — both refresh live as you work.
+Everything is documented in [`src/docs.html`](src/docs.html), which opens inside the extension from the **Docs** button.
 
 ---
 
 ## Installation
 
-### From Chrome Web Store
 [![Install from Chrome Web Store](https://img.shields.io/badge/Available_on-Chrome_Web_Store-4285F4?style=flat-square&logo=googlechrome)](https://chromewebstore.google.com/detail/snipwise)
 
-### Developer Mode (Local)
+### From source
 
 ```bash
 git clone https://github.com/AdnanTemurBarcha/snipwise.git
+cd snipwise
+npm install
+npm run build
 ```
 
-1. Open Chrome → go to `chrome://extensions`
-2. Enable **Developer mode** (top-right toggle)
-3. Click **Load unpacked**
-4. Select the cloned `snipwise` folder
+Then open `chrome://extensions`, enable **Developer mode**, click **Load unpacked** and choose the **`dist/`** folder.
 
 ---
 
-## How It Works
+## Development
 
-### Capture pipeline
+The extension is built with **Vite + TypeScript** (Manifest V3). The editor is a Canvas 2D app with its own document model, command-based undo/redo and renderer.
 
-```
-Click mode in popup
-        │
-        ├── Visible Area ──→ background.captureVisibleTab() ──→ editor.html
-        │
-        ├── Full Page ──────→ content.js injects
-        │                      ↓
-        │                   Capture fixed elements (headers/footers)
-        │                      ↓
-        │                   Hide fixed elements
-        │                      ↓
-        │                   Scroll in viewport steps
-        │                   Read actual window.scrollY after each step
-        │                   Draw only new pixels onto canvas
-        │                      ↓
-        │                   Restore + composite fixed elements
-        │                      ↓
-        │                   Send to background → editor.html
-        │
-        ├── Crop Region ────→ content.js injects SVG mask overlay
-        │                   User drags selection (clear cutout, dark surround)
-        │                   Capture → crop → editor.html
-        │
-        ├── Save as PDF ────→ Same as Full Page
-        │                   Routes to pdf.html instead of editor
-        │                   jsPDF converts canvas → .pdf download → tab closes
-        │
-        └── Blank Workspace → Opens editor.html directly, no capture —
-                            the canvas stays unsized until you add a
-                            first image (file picker / drag-drop / paste)
-```
+| Command | What it does |
+|---------|--------------|
+| `npm run dev` | Vite dev server |
+| `npm run build` | Production build into `dist/` |
+| `npm run typecheck` | TypeScript (strict) |
+| `npm test` | Unit tests (Vitest) |
+| `npm run e2e` | Builds, then drives the real editor in Chrome (Puppeteer) — draws, paints, selects, masks, exports |
+| `npm run e2e:crop` | Tests the crop-region capture script |
+| `npm run package` | Builds and zips `dist/` as `snipwise-studio.zip` for the Chrome Web Store |
 
-Everything past "→ editor.html" is the modular editor described below — the capture pipeline itself (background.js, content.js, popup) is unchanged from how it always worked.
+The end-to-end tests expect Chrome at the default macOS path; set `CHROME=/path/to/chrome` to override.
 
-### Editor architecture
-
-The editor (`editor.html` + `editor/`) is a set of native ES modules — no bundler, no npm, loaded directly via `<script type="module">`. It's organized around a strict boundary: business logic never touches the DOM, only `ui/*` and `main.js` do.
+### Project layout
 
 ```
-editor/
-├── main.js              # wires everything together; the only place that owns
-│                         #   both the workspace state and the live canvases
-├── core/                 # pure logic — no `document` anywhere in this folder
-│   ├── scene.js           # layer model: image/text/callout layers, hit-testing,
-│   │                       #   reorder, resize (incl. proportional font scaling)
-│   ├── workspace.js        # pages: create/remove/reorder, persisted snapshots
-│   ├── history.js          # unified undo stack (annotations + layers + pages)
-│   └── geometry.js         # bbox math, resize-handle hit-testing, arrow math
-├── render/
-│   └── compositor.js      # draws the scene (image/text/callout layers back-to-
-│                           #   front + annotation raster on top); also the one
-│                           #   place that knows how to flatten a scene for export
-├── tools/                  # one file per tool — pen, arrow, line, rect, circle,
-│                           #   text, callout, highlight, blur, step, emoji,
-│                           #   crop-canvas, move — none of them touch `document`
-├── ui/                     # all DOM wiring: toolbar, layers/pages panels,
-│                           #   PDF export dialog, inline text editor, icons
-└── io/                     # the only place that knows about chrome.* APIs and
-                            #   jsPDF: capture import, PNG/clipboard export,
-                            #   the PDF builder
+src/
+├── popup.html / popup.js      # Toolbar popup: capture modes
+├── background.js              # Service worker: capture, stitching, hand-off to Studio
+├── content.js                 # Crop-region overlay (injected on demand)
+├── pdf.html / pdf.js          # "Save as PDF" quick capture
+├── docs.html / docs.css / docs.ts   # Built-in documentation
+├── studio.html
+└── studio/
+    ├── main.ts                # App wiring, shortcuts, import/export
+    ├── engine/                # Document model, commands/history, renderer, selection,
+    │                          #   raster ops, filters, adjustments (no DOM UI)
+    ├── ui/                    # Stage (canvas + tools), inspector, layers/pages panels, dialogs
+    ├── io/                    # Capture hand-off, import (drop/paste/picker), PDF export
+    └── studio.css
+public/                        # manifest.json, icons, bundled jsPDF
+scripts/                       # e2e scripts
 ```
 
-**Why layers/pages are plain objects, not classes:** `core/scene.js`'s layer functions (`hitTestLayer`, `reorderLayer`, `resizeLayer`, `setLayerProp`, `cloneLayers`) work generically on `{id, x, y, width, height, ...}` regardless of layer *type*. Image layers, text layers, and callout layers all live in the same `scene.layers` array — the compositor just branches on `layer.type` when drawing. Pages work the same way one level up: a page is a persisted snapshot of a scene, and switching pages means flushing the live buffers into the outgoing page's snapshot and loading the incoming one back into the same shared objects everything else already holds references to. Adding a new *type* of thing (as happened when Text/Callout became real objects) is a small, contained change — not a new subsystem.
-
-### Full page accuracy
-
-The scroll-stitch reads `window.scrollY` **after** every `scrollTo()` call instead of trusting the requested position. Browsers clamp scrolling near the bottom, so using the actual position prevents the last strip from repeating. Fixed/sticky elements (navbars, footers) are captured separately at scroll=0, hidden during stitching, then composited back at their correct absolute positions.
-
-### Injection dedup
-
-Content script injection is guarded at three levels:
-1. `window.__snipwiseLoaded` flag prevents re-registration of listeners
-2. Pre-injection check in popup verifies flag before calling `executeScript`
-3. Background ignores duplicate `captureReady` messages within 2 seconds
-
----
-
-## File Structure
-
-```
-snipwise/
-├── manifest.json       # MV3, no host permissions
-├── popup.html/.js      # Mode selector UI — capture modes + Blank Workspace
-├── background.js       # Service worker — captures, storage, tab routing
-├── content.js           # Page-level — full page stitch, SVG crop overlay
-├── editor.html          # Editor shell — loads editor/main.js as a module
-├── editor/               # Modular editor — see "Editor architecture" above
-├── pdf.html / pdf.js     # Silent one-click PDF converter (the popup's
-│                         #   "Save as PDF" fast path — separate from the
-│                         #   in-editor Export PDF dialog)
-├── jspdf.min.js         # Bundled locally (no CDN, no CSP issues)
-└── icons/
-    ├── icon16.png
-    ├── icon48.png
-    └── icon128.png
-```
-
-**No build step. No npm. No dependencies to install.** Edit files and reload the extension directly.
-
----
-
-## Keyboard Shortcuts
-
-| Key | Tool |
-|-----|------|
-| `V` | Move / Select |
-| `P` | Pen |
-| `A` | Arrow |
-| `L` | Line |
-| `R` | Rectangle |
-| `C` | Circle |
-| `T` | Text |
-| `H` | Highlight |
-| `S` | Step Marker |
-| `O` | Callout Bubble |
-| `B` | Blur / Redact |
-| `E` | Emoji Stamp |
-| `X` | Crop Canvas |
-| `Shift` (while resizing) | Lock aspect ratio |
-| `Delete` / `Backspace` | Remove selected layer |
-| Arrow keys (Move tool) | Nudge selected layer (`Shift` = 10px) |
-| Double-click (Move tool) | Edit a Text/Callout layer's content |
-| `Ctrl+Z` | Undo |
-| `Ctrl+S` | Download PNG |
-| `Ctrl+C` | Copy Image |
-
----
-
-## Permissions
+### Permissions
 
 | Permission | Why |
 |------------|-----|
-| `activeTab` | Capture a screenshot of the current tab |
-| `scripting` | Inject crop overlay and full-page scroll capture into the page |
-| `tabs` | Open the editor and PDF exporter in new tabs |
-| `storage` | Save theme preference and last capture reference locally |
-| `downloads` | Save PNG and PDF files to the user's Downloads folder |
+| `activeTab`, `scripting` | Capture the page you invoked Snipwise on and run the crop overlay |
+| `tabs` | Open Studio / PDF / docs tabs and take the screenshot |
+| `storage`, `unlimitedStorage` | Hand large captures to Studio, and keep your theme, presets and recent emoji |
 
-**No host permissions.** No external requests. No "Proceed with caution" warning on install.
-
----
-
-## Privacy
-
-Snipwise is 100% local. No data ever leaves your device.
-
-- No analytics
-- No tracking
-- No crash reporting
-- No cloud uploads
-- No user accounts
-- No external API calls
-
-The only external resource is the Google Fonts stylesheet for editor typography — a standard browser request with no user identifiers.
-
-Full privacy policy: [https://snipwise.nexylius.com/privacy/](https://snipwise.nexylius.com/privacy/)
-
----
-
-## Modifying
-
-### Change the color theme
-
-Both themes are CSS variables at the top of `popup.html` and `editor.html` — light is the default (`:root`), dark is opt-in (`html.dark`):
-
-```css
-:root {
-  --accent:  #6d4aff;   /* primary accent */
-  --bg:      #e7e9ec;   /* canvas backdrop */
-  --surface: #ffffff;   /* panels/toolbar */
-}
-html.dark {
-  --accent:  #9583ff;
-  --bg:      #18191c;
-  --surface: #232427;
-}
-```
-
-### Add a new annotation tool
-
-1. Create `editor/tools/your-tool.js` exporting `defineTool({ id, cursor, onPointerDown, onPointerMove, onPointerUp })` from `tools/tool-base.js` — look at `editor/tools/rect.js` for the simplest example (or `text.js` if it should be a movable object rather than raster).
-2. Register it in `editor/tools/index.js`.
-3. Add a toolbar button in `editor.html` (`data-icon="..."` referencing an entry in `editor/ui/icons.js`, or add a new icon there first) and a shortcut key in `editor/keyboard.js`.
-
-Tools never touch `document` directly — they receive an injected `ctx` (scene, annotation canvas, history, and a few UI callbacks) and a canvas-space pointer position.
-
-### Change the test server for PDF / capture
-
-Full page capture uses only browser APIs — no external server involved. PDF conversion uses bundled jsPDF with no network calls.
+There are **no host permissions** and no remote code.
 
 ---
 
 ## Contributing
 
-Pull requests welcome. A few things to keep in mind:
+Pull requests welcome. Please keep these in mind:
 
-- **No build tooling** — keep it plain HTML/CSS/JS (native ES modules are fine), loadable directly as unpacked
-- **No external libraries at runtime** — jsPDF is bundled, nothing else loads remotely
-- **No host permissions** — the extension intentionally has none; keep it that way
-- **Keep the module boundary** — `core/` and `render/` never import `document`; `tools/*` never touch it either (see "Editor architecture" above)
-- No emoji as UI chrome — add an SVG icon to `editor/ui/icons.js` instead (the Emoji Stamp tool's own picker grid is the exception, since that's user content)
-- Test on both Chrome and Brave before submitting
+- **Local only** — no network requests, no analytics, no remote scripts.
+- **No host permissions** — keep it that way.
+- **Keep the engine/UI boundary** — `src/studio/engine/` holds the model, rendering and pixel operations; DOM and event handling live in `src/studio/ui/`.
+- **Add tests** — unit tests for pure logic in `src/__tests__/`, and a check in `scripts/e2e-studio.mjs` for anything a user can click.
+- **Undoable by default** — every edit goes through the command history.
+- Test on Chrome (and Brave if you can) before submitting.
 
 ---
 
 ## Related
 
-- [SwiftCheck](https://github.com/AdnanTemurBarcha/swift-check) — Internet speed test in MB/s, also built by the same developer
+- [SwiftCheck](https://github.com/AdnanTemurBarcha/swift-check) — Internet speed test in MB/s, by the same developer
 
 ---
 
@@ -305,5 +135,5 @@ MIT — do whatever you want, attribution appreciated.
 ## Credits
 
 - PDF export: [jsPDF](https://github.com/parallax/jsPDF) — bundled locally
-- Fonts: [Inter](https://fonts.google.com/specimen/Inter), [JetBrains Mono](https://fonts.google.com/specimen/JetBrains+Mono) via Google Fonts
+- Emoji data: [unicode-emoji-json](https://github.com/muan/unicode-emoji-json) (MIT)
 - Built by [Adnan Temur Barcha](https://github.com/AdnanTemurBarcha)

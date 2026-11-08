@@ -143,22 +143,30 @@ function storePending(dataUrl, mode, title, url) {
     mode:  mode  || "screenshot",
     ts: Date.now(),
   };
-  chrome.tabs.create({
-    url: chrome.runtime.getURL(mode === "pdf" ? "pdf.html" : "editor.html"),
-  });
+  openCapturePage(mode);
 }
+
+// Captures open in Snipwise Studio; "Save as PDF" goes to the quick PDF page.
+function openCapturePage(mode) {
+  chrome.tabs.create({ url: chrome.runtime.getURL(mode === "pdf" ? "pdf.html" : "studio.html") });
+}
+
+// Earlier versions had an opt-in "beta" switch; it no longer exists.
+chrome.runtime.onInstalled.addListener(() => {
+  chrome.storage.local.remove("useStudio");
+});
 
 // ─── Message router ───────────────────────────────────────────────────────────
 chrome.runtime.onMessage.addListener((msg, sender, sendResponse) => {
 
   if (msg.action === "captureTab") {
     setTimeout(() => {
-      chrome.tabs.captureVisibleTab(null, { format: "png", quality: 100 }, (dataUrl) => {
+      chrome.tabs.captureVisibleTab(null, { format: "png" }, (dataUrl) => {
         const err = chrome.runtime.lastError;
         if (err) console.warn("Snipwise captureVisibleTab:", err.message);
         sendResponse(dataUrl || null);
       });
-    }, 200);
+    }, 120);
     return true;
   }
 

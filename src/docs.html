@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Snipwise Studio Docs</title>
+    <link rel="stylesheet" href="docs.css" />
+  </head>
+  <body>
+    <header class="top">
+      <button class="menu-btn" id="menuBtn" aria-label="Contents">☰</button>
+      <div class="brand">Snip<span>wise</span> Studio <em>Docs</em></div>
+      <input id="search" class="search" type="search" placeholder="Search the docs…" autocomplete="off" spellcheck="false" />
+      <button class="theme-btn" id="themeBtn" title="Toggle dark mode" aria-label="Toggle dark mode">◐</button>
+    </header>
+
+    <div class="layout">
+      <nav class="toc" id="toc" aria-label="Contents"></nav>
+
+      <main class="content" id="content">
+        <div class="no-results" id="noResults" hidden>No sections match your search.</div>
+
+        <section id="welcome" data-title="Welcome">
+          <h1>Snipwise Studio documentation</h1>
+          <p class="lead">Snipwise Studio captures screenshots of any web page and gives you a full image editor to finish them — annotate, paint, retouch, add effects, then export a PNG or a polished PDF. Everything runs on your device: nothing is uploaded, and there is no account.</p>
+          <div class="cards">
+            <a class="card" href="#capture"><b>Capture</b><span>Visible area, full page, region, PDF</span></a>
+            <a class="card" href="#annotate"><b>Annotate</b><span>Text, shapes, arrows, blur, markers</span></a>
+            <a class="card" href="#paint"><b>Paint &amp; retouch</b><span>Brush, fill, gradient, clone</span></a>
+            <a class="card" href="#effects"><b>Effects</b><span>Shadows, adjustments, masks, filters</span></a>
+            <a class="card" href="#export"><b>Export</b><span>PNG, clipboard, PDF</span></a>
+            <a class="card" href="#shortcuts"><b>Shortcuts</b><span>Every key in one table</span></a>
+          </div>
+          <p class="note">In this document <kbd>Ctrl</kbd> means <kbd>⌘ Cmd</kbd> on a Mac.</p>
+        </section>
+
+        <section id="start" data-title="Getting started">
+          <h2>Getting started</h2>
+          <h3 id="capture">Capture a page</h3>
+          <p>Click the Snipwise Studio icon in the toolbar and choose how to start:</p>
+          <table>
+            <tr><th>Visible Area</th><td>Captures exactly what is on screen right now.</td></tr>
+            <tr><th>Full Page</th><td>Scrolls the page and stitches everything into one tall image.</td></tr>
+            <tr><th>Crop Region</th><td>Drag a rectangle over the page to capture only that area.</td></tr>
+            <tr><th>Save as PDF</th><td>Captures the page and goes straight to a PDF file.</td></tr>
+            <tr><th>Blank Canvas</th><td>Opens Studio empty, so you can start from images you already have, or from a blank canvas.</td></tr>
+          </table>
+          <p>The capture opens in a new tab in Snipwise Studio. Browser-internal pages (such as <code>chrome://</code> pages) and the Chrome Web Store cannot be captured by any extension.</p>
+
+          <h3 id="blank">Start from a blank canvas</h3>
+          <p>You do not need a screenshot. Click <strong>New</strong> in the top bar (or <strong>New blank canvas</strong> on the empty screen) and choose:</p>
+          <ul>
+            <li><strong>Preset</strong> — Full HD, 4K, Desktop, Mobile; Instagram post and story, X/Twitter, YouTube thumbnail, Facebook cover, LinkedIn banner; A4, A5, US Letter, 4×6 photo (300 dpi); app icon, favicon.</li>
+            <li><strong>Size</strong> — any width and height in pixels. Use <kbd>⇄</kbd> to swap them. The maximum is 8192 px per side and 40 megapixels in total.</li>
+            <li><strong>Background</strong> — <em>Transparent</em>, <em>White</em>, <em>Black</em> or any <em>Color</em>. A colored background becomes a locked “Background” layer; a transparent one has no layers at all.</li>
+          </ul>
+          <p>If the current page is empty it becomes the new canvas; otherwise a new page is added. Snipwise remembers your last size and background.</p>
+        </section>
+
+        <section id="workspace" data-title="The workspace">
+          <h2>The workspace</h2>
+          <ul>
+            <li><strong>Top bar</strong> — New, Add Image, Undo/Redo, and on the right Docs, Copy, Export PDF, Download PNG and the theme toggle.</li>
+            <li><strong>Tool rail</strong> (left) — every tool, grouped: select and pan; selections; painting; text; shapes; privacy and markers; crop. Hover a tool to see its name and key.</li>
+            <li><strong>Canvas</strong> (center) — your artboard. The checkerboard shows transparency.</li>
+            <li><strong>Inspector</strong> (top right) — settings for the active tool or the selected layer: transform, appearance, effects, adjustments, masks, filters.</li>
+            <li><strong>Pages</strong> and <strong>Layers</strong> (bottom right) — your pages and the layer stack.</li>
+            <li><strong>Status bar</strong> — hints and messages on the left, followed by the <strong>name of the active tool</strong> in bold; zoom controls and artboard size on the right.</li>
+          </ul>
+          <h3 id="view">Zoom and pan</h3>
+          <ul>
+            <li>Zoom: <kbd>Ctrl</kbd> + scroll wheel (zooms toward the cursor), <kbd>Ctrl</kbd> <kbd>+</kbd> / <kbd>−</kbd>, or the buttons at the bottom right.</li>
+            <li><kbd>Ctrl</kbd> <kbd>0</kbd> fits the artboard to the window; <kbd>Ctrl</kbd> <kbd>1</kbd> or clicking the percentage shows 100%.</li>
+            <li>Pan: hold <kbd>Space</kbd> and drag, use the Hand tool (<kbd>H</kbd>), drag with the middle mouse button, or scroll. <kbd>Shift</kbd> + scroll pans sideways.</li>
+          </ul>
+        </section>
+
+        <section id="images" data-title="Working with images">
+          <h2>Working with images</h2>
+          <h3>Adding images</h3>
+          <p>Drag files onto the canvas, paste with <kbd>Ctrl</kbd> <kbd>V</kbd>, or click <strong>Add Image</strong>. You can add as many as you like; each becomes its own layer.</p>
+          <ul>
+            <li>The <strong>first image</strong> on an empty page sets the artboard size.</li>
+            <li>Images added later are placed at their <strong>real size</strong>, centered. Only an image too big for the artboard is shrunk, and only enough to fit; the status bar tells you the percentage.</li>
+            <li><strong>Transparent margins are trimmed.</strong> Window screenshots from macOS carry a transparent shadow border; Snipwise removes the empty edges so the transform box hugs what you actually see. (Add a Drop shadow from Effects if you want one back.)</li>
+          </ul>
+          <h3>The locked Background</h3>
+          <p>The image that defines the artboard starts <strong>locked</strong>, like Photoshop’s Background. Dragging on it draws a selection marquee instead of moving it. Click the lock in the Layers panel to unlock it when you want to move, transform or paint on it directly.</p>
+        </section>
+
+        <section id="transform" data-title="Select &amp; transform">
+          <h2>Select &amp; transform <kbd>V</kbd></h2>
+          <p>Click a layer to select it. Drag to move it. <kbd>Shift</kbd>-click adds or removes layers from the selection, and dragging on empty space draws a <strong>marquee</strong> that selects everything it touches.</p>
+          <ul>
+            <li><strong>Resize</strong> — drag a corner or edge handle. Corners keep the proportions (hold <kbd>Shift</kbd> to free-resize a shape); hold <kbd>Alt</kbd> to resize from the center. Text scales its font size when you drag a corner.</li>
+            <li><strong>Rotate</strong> — drag the round handle above the layer. Hold <kbd>Shift</kbd> to snap to 15° steps.</li>
+            <li><strong>Lines and arrows</strong> have a handle at each end instead; <kbd>Shift</kbd> snaps the angle.</li>
+            <li><strong>Exact values</strong> — type X, Y, W, H and rotation in the Transform section. The padlock keeps proportions. Use the flip and rotate-90° buttons next to them.</li>
+            <li><strong>Align</strong> — the row of buttons at the top of Transform. With one layer selected they align it to the artboard; with several, to the selection’s shared bounds. With three or more selected you can also <strong>distribute</strong> horizontally or vertically.</li>
+            <li><strong>Snapping</strong> — moving a layer snaps it to the artboard edges, its center and other layers, with pink guide lines. Hold <kbd>Ctrl</kbd> while dragging to turn snapping off. <kbd>Shift</kbd> while dragging locks to one axis.</li>
+            <li><strong>Nudge</strong> — arrow keys move the selection 1 px (<kbd>Shift</kbd>: 10 px).</li>
+          </ul>
+        </section>
+
+        <section id="annotate" data-title="Annotation tools">
+          <h2>Annotation tools</h2>
+          <p>Every annotation is an <strong>editable layer</strong>: select it later to change its color, width, text or position, or delete it. Pick a tool, adjust its style in the Inspector, then drag on the canvas. The style you set is also used for the next thing you draw.</p>
+          <table>
+            <tr><th>Text <kbd>T</kbd></th><td>Click to type in place. Double-click existing text (or click it with the Text tool) to edit it. Drag a side handle to give it a fixed width so it wraps. <kbd>Ctrl</kbd> <kbd>Enter</kbd> or <kbd>Esc</kbd> finishes. Set font, size, weight, italic, alignment, line height and color in the Inspector.</td></tr>
+            <tr><th>Callout <kbd>O</kbd></th><td>A text bubble with a tail. Same editing as text, plus fill color and corner radius.</td></tr>
+            <tr><th>Rectangle <kbd>R</kbd></th><td>Drag to draw. <kbd>Shift</kbd> makes a square, <kbd>Alt</kbd> draws from the center. Choose outline color, width, optional fill and corner radius.</td></tr>
+            <tr><th>Ellipse <kbd>C</kbd></th><td>Same as the rectangle; <kbd>Shift</kbd> makes a circle.</td></tr>
+            <tr><th>Line <kbd>L</kbd> / Arrow <kbd>A</kbd></th><td>Drag from start to end; <kbd>Shift</kbd> snaps to 15°. For lines, toggle arrowheads at either end in the Inspector.</td></tr>
+            <tr><th>Pen <kbd>P</kbd></th><td>Freehand stroke with your chosen color and width.</td></tr>
+            <tr><th>Highlighter <kbd>Y</kbd></th><td>A wide, translucent stroke for marking text.</td></tr>
+            <tr><th>Blur / Pixelate / Redact <kbd>U</kbd></th><td>Drag over anything private. Choose <em>Pixelate</em>, <em>Blur</em> or <em>Solid cover</em> and its strength. It is <strong>non-destructive</strong>: move or delete the layer and the original shows again. Exports include the effect.</td></tr>
+            <tr><th>Step marker <kbd>N</kbd></th><td>Click to drop numbered circles; numbers continue automatically (1, 2, 3…). Change a number or size in the Inspector.</td></tr>
+            <tr><th>Emoji <kbd>J</kbd></th><td>Opens a picker with <strong>every Unicode emoji</strong>. Search by name (try “rocket” or “warning”), jump between categories with the tabs, or reuse your <em>Recent</em> and <em>Quick picks</em> at the top. Then click the canvas to stamp it. Resize like any layer. (Flags show as letter pairs on Windows — that is a Windows limitation.)</td></tr>
+          </table>
+          <p>Hollow shapes can only be grabbed by their outline, so you can still click through to whatever is inside them.</p>
+        </section>
+
+        <section id="paint" data-title="Painting tools">
+          <h2>Painting tools</h2>
+          <p>These work on pixels. <strong>Where the paint goes:</strong></p>
+          <ul>
+            <li>If an unlocked <em>image</em> layer is selected, you paint on that layer.</li>
+            <li>If nothing (or a non-image layer such as a shape) is selected, the brush, bucket and gradient create a new transparent <strong>Paint</strong> layer on top — your screenshot stays untouched.</li>
+            <li>The eraser and clone stamp need an image layer: select one, or just start on it.</li>
+            <li>Painting on a <strong>locked</strong> layer is refused with a hint. Unlock the layer first.</li>
+            <li>If a <strong>pixel selection</strong> is active, painting is limited to it.</li>
+          </ul>
+          <table>
+            <tr><th>Brush <kbd>B</kbd></th><td>Size, hardness (soft to hard edge), opacity and color. Opacity applies to the whole stroke, so overlapping passes don’t build up. <kbd>Shift</kbd>-click draws a straight line from the last stroke. Pen pressure is supported.</td></tr>
+            <tr><th>Eraser <kbd>E</kbd></th><td>Removes pixels with the same size, hardness and opacity controls.</td></tr>
+            <tr><th>Paint bucket <kbd>K</kbd></th><td>Fills an area of similar color. <em>Tolerance</em> sets how similar; <em>Contiguous</em> fills only the connected area. On a new Paint layer it looks at what you can see across all layers.</td></tr>
+            <tr><th>Gradient <kbd>G</kbd></th><td>Drag across the canvas. Choose linear or radial, a second color, or <em>Fade to transparent</em>. <kbd>Shift</kbd> snaps the angle.</td></tr>
+            <tr><th>Eyedropper <kbd>I</kbd></th><td>Click or drag to pick a color from anywhere on the canvas. <kbd>Alt</kbd>-click does the same with the brush, bucket or gradient.</td></tr>
+            <tr><th>Clone stamp <kbd>S</kbd></th><td><kbd>Alt</kbd>-click to choose the area to copy from, then paint elsewhere to duplicate it — handy for removing objects. The source cross follows your brush.</td></tr>
+          </table>
+          <p>Each stroke, fill or gradient is a single undo step.</p>
+        </section>
+
+        <section id="selections" data-title="Pixel selections">
+          <h2>Pixel selections</h2>
+          <p>A selection limits where painting, fills, clears and filters take effect. It is separate from selecting <em>layers</em>.</p>
+          <table>
+            <tr><th>Rectangular marquee <kbd>M</kbd></th><td>Drag a rectangle. <kbd>Shift</kbd> makes a square, <kbd>Alt</kbd> draws from the center (after you start dragging).</td></tr>
+            <tr><th>Elliptical marquee <kbd>Shift</kbd> <kbd>M</kbd></th><td>Drag an ellipse or circle.</td></tr>
+            <tr><th>Lasso <kbd>Q</kbd></th><td>Draw freehand around an area; release to close it.</td></tr>
+            <tr><th>Magic wand <kbd>W</kbd></th><td>Click a color to select similar pixels. Adjust <em>Tolerance</em> and <em>Contiguous</em>.</td></tr>
+          </table>
+          <h3>Combining selections</h3>
+          <p>Choose <strong>New / Add / Subtract</strong> in the tool options, or hold <kbd>Shift</kbd> (add) or <kbd>Alt</kbd> (subtract) when you start dragging. Clicking without dragging deselects.</p>
+          <h3>The Selection panel</h3>
+          <p>When a selection exists, the Inspector offers: <strong>Select all</strong>, <strong>Invert</strong>, <strong>Deselect</strong>, <strong>Feather</strong> (soft edge), <strong>Grow / shrink</strong> by a number of pixels, <strong>Fill</strong> with the current color, <strong>Clear</strong> (delete the pixels), <strong>Copy to layer</strong>, <strong>Cut to layer</strong> and <strong>Crop to it</strong>.</p>
+          <p>The outline shows as animated “marching ants”. Selection changes are undoable. Selections belong to one artboard size and are dropped when it changes.</p>
+        </section>
+
+        <section id="layers" data-title="Layers">
+          <h2>Layers</h2>
+          <p>The Layers panel lists everything on the page, top layer first.</p>
+          <ul>
+            <li><strong>Select</strong> a layer by clicking it; <kbd>Shift</kbd>/<kbd>Ctrl</kbd>-click selects several.</li>
+            <li><strong>Reorder</strong> by dragging rows, or use the up/down buttons, or <kbd>]</kbd> and <kbd>[</kbd>.</li>
+            <li><strong>Rename</strong> by double-clicking the name.</li>
+            <li><strong>Eye</strong> hides or shows a layer; <strong>lock</strong> protects it from moving and painting.</li>
+            <li><strong>Duplicate</strong> (<kbd>Ctrl</kbd> <kbd>D</kbd>) and <strong>delete</strong> (<kbd>Delete</kbd>) from the buttons at the bottom or the keyboard.</li>
+            <li>Thumbnails show each layer’s content; layers with a mask show a second black-and-white thumbnail.</li>
+          </ul>
+          <h3>Opacity and blend modes</h3>
+          <p>The <strong>Appearance</strong> section sets a layer’s opacity and one of 16 blend modes: Normal, Multiply, Screen, Overlay, Darken, Lighten, Color Dodge, Color Burn, Hard Light, Soft Light, Difference, Exclusion, Hue, Saturation, Color and Luminosity.</p>
+          <h3>Adjustment layers</h3>
+          <p>The <strong>half-circle button</strong> at the bottom of the Layers panel adds an <em>adjustment layer</em>. It re-colors <strong>everything beneath it</strong> (inside its box) without changing those layers, so you can lower its opacity, hide it or delete it at any time. Use the sliders and presets described below, and give it a mask to apply the look to only part of the image.</p>
+        </section>
+
+        <section id="effects" data-title="Effects &amp; adjustments">
+          <h2>Effects &amp; adjustments</h2>
+          <p>Select a layer and use the <strong>Effects</strong> and <strong>Adjustments</strong> sections. They are all <strong>non-destructive</strong> — turn them off and the layer is back to normal.</p>
+          <h3>Drop shadow and outline</h3>
+          <ul>
+            <li><strong>Drop shadow</strong> — color, blur, X/Y offset and opacity. Set the offset to 0 for a glow.</li>
+            <li><strong>Outline</strong> — a colored border of the width you choose around the layer’s visible shape.</li>
+          </ul>
+          <h3>Adjustments</h3>
+          <p>Sliders for <strong>Brightness, Contrast, Saturation, Hue, Grayscale, Sepia, Invert</strong> and <strong>Blur</strong>, plus <strong>Levels</strong> (black point, gamma, white point). Double-click any slider to reset it; <strong>Reset</strong> clears everything.</p>
+          <h3>Presets</h3>
+          <p>The dropdown applies a look in one click — Black &amp; white, Sepia, Warm, Cool, Vivid, Faded, High contrast, Dim, Invert. It shows the name of the preset that matches the current sliders, and switches to <em>Custom</em> once you tweak them.</p>
+          <p>To keep your own look, set the sliders, click <strong>Save…</strong>, type a name and press <kbd>Enter</kbd>. It appears under <em>My presets</em>; select it and click <strong>Delete</strong> to remove it. Saved presets include Levels and are stored on this browser.</p>
+        </section>
+
+        <section id="masks" data-title="Layer masks">
+          <h2>Layer masks</h2>
+          <p>A mask hides parts of a layer <strong>without erasing them</strong>. Select a layer and, in <strong>Layer mask</strong>, choose:</p>
+          <ul>
+            <li><strong>Reveal all</strong> — the layer stays fully visible; erase to hide parts.</li>
+            <li><strong>Hide all</strong> — the layer disappears; brush to reveal parts.</li>
+            <li><strong>From selection</strong> — only the currently selected area stays visible.</li>
+          </ul>
+          <p>While a mask is being edited, the <strong>brush reveals</strong> and the <strong>eraser hides</strong>; the bucket and gradient work on the mask too. Click the mask thumbnail in the Layers panel (or <strong>Edit mask</strong>) to switch between painting the layer and its mask; the highlighted thumbnail shows what you are painting. <strong>Invert</strong> swaps hidden and visible; <strong>Delete</strong> removes the mask and everything shows again.</p>
+          <p>Masks work on every layer type, including adjustment layers (to limit an adjustment to one area).</p>
+        </section>
+
+        <section id="filters" data-title="Filters">
+          <h2>Filters</h2>
+          <p>Filters change an image layer’s pixels <strong>permanently</strong> (use Ctrl+Z to undo). Select an unlocked image layer, choose a filter in the <strong>Filters</strong> section, set its amount, and click <strong>Apply</strong>. If a pixel selection exists, only the selected area is changed, with soft edges blending smoothly.</p>
+          <table>
+            <tr><th>Gaussian blur</th><td>Smooth blur by radius. Edges stay solid.</td></tr>
+            <tr><th>Sharpen</th><td>Increases edge contrast.</td></tr>
+            <tr><th>Add noise</th><td>Film-grain noise of the chosen strength.</td></tr>
+            <tr><th>Pixelate</th><td>Blocks of the chosen size.</td></tr>
+            <tr><th>Posterize</th><td>Reduces colors to a number of levels.</td></tr>
+            <tr><th>Black &amp; white, Sepia, Invert</th><td>One-click color changes.</td></tr>
+          </table>
+          <p class="note">For a reversible look, use <a href="#effects">Adjustments</a> or an adjustment layer instead. To blur a region for privacy without altering pixels, use the <a href="#annotate">Blur tool</a>.</p>
+        </section>
+
+        <section id="canvas" data-title="Canvas, crop &amp; pages">
+          <h2>Canvas, crop &amp; pages</h2>
+          <h3>Artboard size</h3>
+          <p>With nothing selected, the <strong>Canvas</strong> section shows the artboard’s width and height. Changing them resizes the artboard; layers keep their positions.</p>
+          <h3>Crop <kbd>X</kbd></h3>
+          <p>Drag the crop box (or its handles); <kbd>Enter</kbd> or <strong>Apply crop</strong> confirms, <kbd>Esc</kbd> cancels. Crop is <strong>non-destructive</strong>: it shrinks the artboard and shifts layers, and undo restores everything. A selection can also be turned into a crop with <em>Crop to it</em>.</p>
+          <h3>Pages</h3>
+          <p>A project can hold several pages, each with its own size and layers (and each becomes a page in PDF export). <strong>New page</strong> opens the New canvas dialog. Click a page to switch to it; double-click its name to rename.</p>
+        </section>
+
+        <section id="export" data-title="Exporting">
+          <h2>Exporting</h2>
+          <table>
+            <tr><th>Download PNG</th><td>Saves the current page as a full-resolution PNG, with transparency preserved. <kbd>Ctrl</kbd> <kbd>S</kbd></td></tr>
+            <tr><th>Copy</th><td>Copies the page to the clipboard as an image, ready to paste anywhere. <kbd>Ctrl</kbd> <kbd>C</kbd></td></tr>
+            <tr><th>Export PDF</th><td>Opens the PDF dialog with a live preview. All pages are included.</td></tr>
+          </table>
+          <p>Exports flatten the visible layers exactly as shown, including effects, adjustments, masks and blur layers. Hidden layers are not exported.</p>
+          <h3>PDF options</h3>
+          <ul>
+            <li><strong>Page size</strong> A4, Letter or Legal; <strong>orientation</strong>; <strong>margin</strong> (5–30 mm).</li>
+            <li><strong>Page fit</strong> — fit each page onto one PDF page, or split tall pages across several.</li>
+            <li><strong>Cover page</strong> with a title, an accent color (swatches or any hex) and an optional page thumbnail.</li>
+          </ul>
+          <p>Transparent areas are printed on white in PDFs.</p>
+        </section>
+
+        <section id="shortcuts" data-title="Keyboard shortcuts">
+          <h2>Keyboard shortcuts</h2>
+          <h3>Tools</h3>
+          <table class="keys">
+            <tr><td><kbd>V</kbd></td><td>Select &amp; transform</td><td><kbd>H</kbd></td><td>Pan (or hold <kbd>Space</kbd>)</td></tr>
+            <tr><td><kbd>M</kbd></td><td>Rectangular marquee</td><td><kbd>Shift</kbd> <kbd>M</kbd></td><td>Elliptical marquee</td></tr>
+            <tr><td><kbd>Q</kbd></td><td>Lasso</td><td><kbd>W</kbd></td><td>Magic wand</td></tr>
+            <tr><td><kbd>B</kbd></td><td>Brush</td><td><kbd>E</kbd></td><td>Eraser</td></tr>
+            <tr><td><kbd>K</kbd></td><td>Paint bucket</td><td><kbd>G</kbd></td><td>Gradient</td></tr>
+            <tr><td><kbd>I</kbd></td><td>Eyedropper</td><td><kbd>S</kbd></td><td>Clone stamp</td></tr>
+            <tr><td><kbd>T</kbd></td><td>Text</td><td><kbd>O</kbd></td><td>Callout</td></tr>
+            <tr><td><kbd>R</kbd></td><td>Rectangle</td><td><kbd>C</kbd></td><td>Ellipse</td></tr>
+            <tr><td><kbd>L</kbd></td><td>Line</td><td><kbd>A</kbd></td><td>Arrow</td></tr>
+            <tr><td><kbd>P</kbd></td><td>Pen</td><td><kbd>Y</kbd></td><td>Highlighter</td></tr>
+            <tr><td><kbd>U</kbd></td><td>Blur / pixelate / redact</td><td><kbd>N</kbd></td><td>Step marker</td></tr>
+            <tr><td><kbd>J</kbd></td><td>Emoji</td><td><kbd>X</kbd></td><td>Crop</td></tr>
+          </table>
+          <h3>Editing</h3>
+          <table class="keys">
+            <tr><td><kbd>Ctrl</kbd> <kbd>Z</kbd></td><td>Undo</td><td><kbd>Ctrl</kbd> <kbd>Shift</kbd> <kbd>Z</kbd> / <kbd>Ctrl</kbd> <kbd>Y</kbd></td><td>Redo</td></tr>
+            <tr><td><kbd>Ctrl</kbd> <kbd>D</kbd></td><td>Duplicate layer</td><td><kbd>Delete</kbd></td><td>Delete layer (or clear selected pixels)</td></tr>
+            <tr><td><kbd>Ctrl</kbd> <kbd>A</kbd></td><td>Select all layers (all pixels with a selection tool)</td><td><kbd>Ctrl</kbd> <kbd>Shift</kbd> <kbd>A</kbd></td><td>Deselect pixels</td></tr>
+            <tr><td><kbd>Ctrl</kbd> <kbd>Shift</kbd> <kbd>I</kbd></td><td>Invert selection</td><td><kbd>Esc</kbd></td><td>Deselect pixels, then layers, then switch to Select</td></tr>
+            <tr><td><kbd>Ctrl</kbd> <kbd>J</kbd></td><td>Copy selection to a new layer</td><td><kbd>Ctrl</kbd> <kbd>Shift</kbd> <kbd>J</kbd></td><td>Cut selection to a new layer</td></tr>
+            <tr><td><kbd>Alt</kbd> <kbd>Backspace</kbd></td><td>Fill selection with the current color</td><td><kbd>[</kbd> / <kbd>]</kbd></td><td>Send backward / bring forward</td></tr>
+            <tr><td><kbd>←</kbd> <kbd>↑</kbd> <kbd>→</kbd> <kbd>↓</kbd></td><td>Nudge 1 px (<kbd>Shift</kbd>: 10 px)</td><td><kbd>Enter</kbd> / <kbd>Esc</kbd></td><td>Apply / cancel crop</td></tr>
+          </table>
+          <h3>File and view</h3>
+          <table class="keys">
+            <tr><td><kbd>Ctrl</kbd> <kbd>S</kbd></td><td>Download PNG</td><td><kbd>Ctrl</kbd> <kbd>C</kbd></td><td>Copy image</td></tr>
+            <tr><td><kbd>Ctrl</kbd> <kbd>V</kbd></td><td>Paste an image</td><td><kbd>F1</kbd></td><td>Open these docs</td></tr>
+            <tr><td><kbd>Ctrl</kbd> <kbd>0</kbd></td><td>Fit to window</td><td><kbd>Ctrl</kbd> <kbd>1</kbd></td><td>Zoom to 100%</td></tr>
+            <tr><td><kbd>Ctrl</kbd> <kbd>+</kbd> / <kbd>−</kbd></td><td>Zoom in / out</td><td><kbd>Space</kbd> + drag</td><td>Pan</td></tr>
+          </table>
+          <h3>Modifiers while dragging</h3>
+          <table class="keys">
+            <tr><td><kbd>Shift</kbd></td><td>Constrain: square/circle, 15° angles, one axis, straight brush line</td><td><kbd>Alt</kbd></td><td>Draw or resize from the center; pick a color; set clone source</td></tr>
+            <tr><td><kbd>Ctrl</kbd></td><td>Turn snapping off while moving</td><td><kbd>Shift</kbd> / <kbd>Alt</kbd> at the start of a selection</td><td>Add to / subtract from the selection</td></tr>
+          </table>
+        </section>
+
+        <section id="help" data-title="Tips &amp; troubleshooting">
+          <h2>Tips &amp; troubleshooting</h2>
+          <details><summary>I can’t paint on or move my screenshot.</summary><p>The first image is locked as the Background. Click its lock icon in the Layers panel to unlock it — or leave it locked and paint on a new Paint layer by deselecting first.</p></details>
+          <details><summary>My drop shadow or outline isn’t visible.</summary><p>Effects follow the layer’s visible shape. Check that the shadow color isn’t the same as the background, increase the blur/offset, and make sure the layer’s opacity isn’t very low.</p></details>
+          <details><summary>The brush doesn’t show where I clicked.</summary><p>If the selected layer is a shape or text, the brush paints on a new Paint layer above everything — look for it in the Layers panel. If a pixel selection is active, paint only appears inside it. Press <kbd>Ctrl</kbd> <kbd>Shift</kbd> <kbd>A</kbd> to deselect.</p></details>
+          <details><summary>How do I blur a password or private detail?</summary><p>Use the Blur tool (<kbd>U</kbd>), choose <em>Solid cover</em> for guaranteed privacy, and drag over it. Pixelate and blur hide detail well, but a solid cover leaves nothing in the exported file to recover.</p></details>
+          <details><summary>A filter or adjustment looks too strong.</summary><p>Undo with <kbd>Ctrl</kbd> <kbd>Z</kbd> and try a lower amount. Adjustments (not Filters) can be dialed back later with their sliders, and adjustment layers can have their opacity lowered.</p></details>
+          <details><summary>Why can’t I capture this page?</summary><p>Chrome doesn’t allow extensions to capture internal pages (<code>chrome://</code>), the Web Store, or other extensions’ pages. Open a normal website and try again. For very long pages, Full Page capture can take a few seconds while it scrolls.</p></details>
+          <details><summary>My canvas size is rejected.</summary><p>A canvas can be at most 8192 px on a side and 40 megapixels in total, which keeps editing fast and memory safe.</p></details>
+          <details><summary>Does the undo history go on forever?</summary><p>Undo keeps the last 300 steps per session. Closing the editor tab ends the session, so export what you need before closing.</p></details>
+
+          <h3 id="privacy">Privacy</h3>
+          <p>Snipwise works entirely on your device. Captures, edits and exports are never uploaded; there are no accounts, servers or analytics. Saved presets and your theme choice live in this browser’s extension storage.</p>
+          <p class="note">Snipwise is free and open source (MIT licence).</p>
+        </section>
+      </main>
+    </div>
+    <script type="module" src="docs.ts"></script>
+  </body>
+</html>

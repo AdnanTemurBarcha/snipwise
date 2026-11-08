@@ -22,13 +22,14 @@ function isInjectableTab(tab) {
   return tab.url.startsWith("http://") || tab.url.startsWith("https://");
 }
 
-async function injectContentScript(tabId) {
+// Make sure the crop script is running in the page, without ever stacking a second copy.
+async function ensureContentScript(tabId) {
   try {
-    await chrome.scripting.executeScript({
-      target: { tabId },
-      func: () => { window.__snipwiseLoaded = false; },
-    });
-  } catch (_) {}
+    const r = await chrome.tabs.sendMessage(tabId, { action: "ping" });
+    if (r && r.ok) return;
+  } catch (_) {
+    /* nothing listening yet */
+  }
   await chrome.scripting.executeScript({ target: { tabId }, files: ["content.js"] });
 }
 
@@ -58,13 +59,25 @@ $("modeCrop").addEventListener("click", async () => {
     alert("Snipwise cannot capture this page.\nNavigate to a regular website first.");
     return;
   }
-  await injectContentScript(tab.id);
-  chrome.tabs.sendMessage(tab.id, { action: "crop" });
+  try {
+    await ensureContentScript(tab.id);
+    // wait for the page to confirm: closing the popup first could drop the message
+    const ack = await chrome.tabs.sendMessage(tab.id, { action: "crop" });
+    if (!ack || !ack.ok) throw new Error("no answer from the page");
+  } catch (_) {
+    alert("Snipwise couldn't start the crop tool on this page.\nReload the page and try again.");
+    return;
+  }
   window.close();
 });
 
+$("docsLink").addEventListener("click", (e) => {
+  e.preventDefault();
+  chrome.tabs.create({ url: chrome.runtime.getURL("docs.html") });
+});
+
 $("modeBlank").addEventListener("click", () => {
-  chrome.tabs.create({ url: chrome.runtime.getURL("editor.html") });
+  chrome.tabs.create({ url: chrome.runtime.getURL("studio.html") });
   window.close();
 });
 

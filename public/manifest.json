@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
-  "name": "Snipwise - Screenshot & PDF",
-  "version": "2.0.0",
-  "description": "Screenshot, combine images, and annotate with a full multi-page editor. Export to PNG or a customizable PDF. 100% local, no uploads.",
+  "name": "Snipwise Studio - Screenshot, Edit & PDF",
+  "version": "3.0.0",
+  "description": "Capture any page and edit it with layers, annotations, brushes, masks and filters. Export PNG or PDF. 100% local, no uploads.",
   "action": {
     "default_popup": "popup.html",
     "default_icon": {

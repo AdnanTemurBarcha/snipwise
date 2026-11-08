@@ -12,7 +12,8 @@
     "lint": "eslint src",
     "e2e": "npm run build && node scripts/e2e-studio.mjs",
     "e2e:crop": "npm run build && node scripts/e2e-crop.mjs",
-    "package": "npm run build && cd dist && zip -qr ../snipwise-studio.zip . && echo Created snipwise-studio.zip"
+    "package": "npm run build && cd dist && zip -qr ../snipwise-studio.zip . && echo Created snipwise-studio.zip",
+    "store-assets": "npm run build && node scripts/store-assets.mjs"
   },
   "license": "MIT",
   "devDependencies": {

@@ -39,6 +39,8 @@ A free, open-source Chrome extension that captures screenshots and gives you a f
 
 Everything is documented in [`src/docs.html`](src/docs.html), which opens inside the extension from the **Docs** button.
 
+Privacy: Snipwise Studio collects nothing and never uploads anything — see the [privacy policy](privacy.md).
+
 ---
 
 ## Installation

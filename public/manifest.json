@@ -11,27 +11,20 @@
       "128": "icons/icon128.png"
     }
   },
-  "background": { "service_worker": "background.js" },
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
   "icons": {
     "16": "icons/icon16.png",
     "48": "icons/icon48.png",
     "128": "icons/icon128.png"
   },
   "permissions": [
-    "activeTab", "scripting", "storage", "unlimitedStorage", "downloads", "tabs"
-  ],
-  "web_accessible_resources": [
-    {
-      "resources": [
-        "editor.html", "pdf.html", "pdf.js", "jspdf.min.js",
-        "editor/*.js",
-        "editor/core/*.js",
-        "editor/render/*.js",
-        "editor/tools/*.js",
-        "editor/ui/*.js",
-        "editor/io/*.js"
-      ],
-      "matches": ["<all_urls>"]
-    }
+    "activeTab",
+    "scripting",
+    "storage",
+    "unlimitedStorage",
+    "tabs"
   ]
 }

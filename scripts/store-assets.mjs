@@ -12,7 +12,9 @@ import puppeteer from 'puppeteer-core';
 
 const ROOT = path.resolve(import.meta.dirname, '..');
 const DIST = path.join(ROOT, 'dist');
-const OUT = path.join(ROOT, 'store');
+// NO_CAPTION=1 renders the same scenes without the purple caption band, for use on the website (output: store/site/)
+const NO_CAPTION = process.env.NO_CAPTION === '1';
+const OUT = path.join(ROOT, NO_CAPTION ? 'store/site' : 'store');
 fs.mkdirSync(OUT, { recursive: true });
 const CHROME = process.env.CHROME || '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome';
 const MIME = { '.html': 'text/html', '.js': 'text/javascript', '.css': 'text/css', '.png': 'image/png' };
@@ -175,14 +177,14 @@ async function openStudio(theme, br = browser) {
     await sleep(150);
   };
   ctl.type = async (text) => { await page.keyboard.type(text, { delay: 12 }); await page.keyboard.down('Control'); await page.keyboard.press('Enter'); await page.keyboard.up('Control'); };
-  ctl.caption = (title, sub) => page.evaluate((title, sub, mark, font) => {
+  ctl.caption = (title, sub) => NO_CAPTION ? Promise.resolve() : page.evaluate((title, sub, mark, font) => {
     document.getElementById('cap')?.remove();
     const d = document.createElement('div'); d.id = 'cap';
     d.style.cssText = `position:fixed;left:0;right:0;bottom:0;height:92px;display:flex;align-items:center;justify-content:space-between;padding:0 34px;background:linear-gradient(100deg,#4c1d95,#7c3aed 58%,#a78bfa);color:#fff;font-family:${font};z-index:99999;box-shadow:0 -10px 36px rgba(30,10,80,.38)`;
     d.innerHTML = `<div><div style="font:800 31px/1.1 ${font};letter-spacing:-.6px">${title}</div><div style="font:500 16px/1.3 ${font};opacity:.9;margin-top:6px">${sub}</div></div><div style="display:flex;align-items:center;gap:12px;font:800 20px ${font};letter-spacing:-.3px">${mark}<span>Snipwise Studio</span></div>`;
     document.body.append(d);
   }, title, sub, MARK(46), FONT);
-  ctl.snap = async (name) => { await sleep(350); const buf = await page.screenshot({ type: 'png' }); await finish(Buffer.from(buf), 1280, 800, name); return buf; };
+  ctl.snap = async (name) => { await page.evaluate(() => { const t = document.getElementById('statusText'); if (t) t.textContent = 'Ready'; }); await sleep(350); const buf = await page.screenshot({ type: 'png' }); await finish(Buffer.from(buf), 1280, 800, name); return buf; };
   return ctl;
 }
 
@@ -364,6 +366,7 @@ const arrowSvg = (c) => `<svg width="120" height="90" viewBox="0 0 120 90"><path
 const step = (n, c = '#f97316') => `<div style="width:54px;height:54px;border-radius:50%;background:${c};color:#fff;font:800 28px/54px ${FONT};text-align:center;box-shadow:0 8px 22px rgba(0,0,0,.28)">${n}</div>`;
 const bg = 'radial-gradient(900px 500px at 85% 10%,#a78bfa55,transparent 60%),linear-gradient(120deg,#3b0f8c,#6d28d9 55%,#8b5cf6)';
 
+if (!NO_CAPTION) {
 await tile(1400, 560, `<!doctype html><meta charset=utf-8><body style="margin:0;width:1400px;height:560px;overflow:hidden;position:relative;background:${bg};font-family:${FONT};color:#fff">
 <div style="position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.10) 1.5px,transparent 1.5px);background-size:34px 34px;opacity:.6"></div>
 <div style="position:absolute;left:84px;top:140px">${MARK(124)}</div>
@@ -381,6 +384,8 @@ await tile(440, 280, `<!doctype html><meta charset=utf-8><body style="margin:0;w
 <div style="position:absolute;left:0;right:0;top:222px;text-align:center;font:600 18px/1 ${FONT};color:#e4d9ff;letter-spacing:.2px">Capture · Edit · Export</div>
 ${chip('left:46px;top:46px;transform:scale(.7);transform-origin:0 0', step(1))}${chip('right:46px;top:46px;transform:scale(.7);transform-origin:100% 0', step(2, '#22d3ee'))}
 </body>`, 'promo-small-440x280.png');
+
+}
 
 await browser.close();
 server.close();
